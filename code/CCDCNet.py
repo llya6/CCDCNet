@@ -96,20 +96,6 @@ class RS_Dblock(nn.Module):
         return out
 
 
-
-
-# class DSC(nn.Module):
-#     def __init__(self, nin, nout, kernel_size=3, padding=1):
-#         super(DSC, self).__init__()
-#         self.depthwise = nn.Conv2d(nin, nin, kernel_size=kernel_size, padding=padding, groups=nin)
-#         self.pointwise = nn.Conv2d(nin, nout, kernel_size=1)
-
-#     def forward(self, x):
-#         out = self.depthwise(x)
-#         out = self.pointwise(out)
-#         return out
-
-
 class Upsample(nn.Module):
 
     def __init__(self, scale_factor, mode="nearest"):
@@ -772,45 +758,3 @@ class PAM_Module(Module):
         return out
 
 
-
-
-# import torch
-# import torch.nn as nn
-
-# class mdlDblock(nn.Module):
-#     def __init__(self, channel):
-#         super(mdlDblock, self).__init__()
-#         # 封装膨胀卷积层
-#         self.dilate1 = self._make_dilate_layer(channel, dilation=1)
-#         self.dilate2 = self._make_dilate_layer(channel, dilation=2)
-#         self.dilate3 = self._make_dilate_layer(channel, dilation=4)
-#         self.dilate4 = self._make_dilate_layer(channel, dilation=8)
-
-#         # Dropout 层防止过拟合
-#         self.dropout = nn.Dropout(p=0.5)
-
-#     def _make_dilate_layer(self, channel, dilation):
-#         # 使用深度可分离卷积、批归一化和 LeakyReLU
-#         return nn.Sequential(
-#             nn.Conv2d(channel, channel, kernel_size=3, groups=channel, dilation=dilation, padding=dilation),
-#             nn.Conv2d(channel, channel, kernel_size=1),
-#             # nn.BatchNorm2d(channel),
-#             nn.LeakyReLU(inplace=True)
-#         )
-
-#     def forward(self, x):
-#         # 并行膨胀卷积
-#         dilate1_out = self.dilate1(x)
-#         dilate2_out = self.dilate2(x)
-#         dilate3_out = self.dilate3(x)
-#         dilate4_out = self.dilate4(x)
-        
-#         # Dropout 应用在各个输出上
-#         dilate1_out = self.dropout(dilate1_out)
-#         dilate2_out = self.dropout(dilate2_out)
-#         dilate3_out = self.dropout(dilate3_out)
-#         dilate4_out = self.dropout(dilate4_out)
-        
-#         # 残差连接
-#         out = x + dilate1_out + dilate2_out + dilate3_out + dilate4_out
-#         return out
