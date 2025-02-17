@@ -10,4 +10,7 @@ mechanisms for adaptive feature selection. Experimental results demonstrate that
 with notable improvements in key metrics such as mIoU, Precision and F1 score, providing an effective solution for cross-modal high-precision flood mapping. 
 
 # CCDCNet Architecture
+![](https://github.com/liyaisme/CCDCNet/blob/master/imgs/Visio-architecture2.pdf)
+
+# Performance
 ![]()
