@@ -17,10 +17,11 @@ with notable improvements in key metrics such as mIoU, Precision and F1 score, p
 ![](https://github.com/liyaisme/CCDCNet/blob/master/imgs/table.png)
 
 # Training
-...
+```
 python train.py
-...
+```
 
 # Test
-...
+```
 python test_eval_now.py
+```
