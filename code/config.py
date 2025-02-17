@@ -1,6 +1,4 @@
 import os
-
-
 DEVICE='cuda'
 EPOCHS=100
 BATCH_SIZE=16
